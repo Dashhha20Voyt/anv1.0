@@ -76,20 +76,20 @@ async def root():
             </style>
         </head>
         <body>
-            <h1>🧬 Aging Theory Analyzer API</h1>
-            <p class="status">✅ Backend is running on Hugging Face Spaces!</p>
+            <h1> Aging Theory Analyzer API</h1>
+            <p class="status"> Backend is running on Hugging Face Spaces!</p>
             
             <div class="features">
-                <h3>✨ Features:</h3>
+                <h3> Features:</h3>
                 <ul>
-                    <li>🔍 Paper collection from Semantic Scholar</li>
-                    <li>🤖 LLM-powered Q1-Q9 extraction with Groq</li>
-                    <li>📦 Batch processing for large datasets (10 papers/batch)</li>
-                    <li>⚡ Automatic rate limiting</li>
+                    <li> Paper collection from Semantic Scholar</li>
+                    <li> LLM-powered Q1-Q9 extraction with Groq</li>
+                    <li> Batch processing for large datasets (10 papers/batch)</li>
+                    <li> Automatic rate limiting</li>
                 </ul>
             </div>
             
-            <h2>📚 Available Endpoints:</h2>
+            <h2> Available Endpoints:</h2>
             <div class="endpoint">
                 <strong>GET</strong> <a href="/docs">/docs</a> - Interactive API documentation (Swagger UI)
             </div>
@@ -221,7 +221,7 @@ async def extract_data(request: ExtractRequest):
     """
     Legacy endpoint: Extract all papers at once
     
-    ⚠️ NOT RECOMMENDED for large datasets (>50 papers)
+     NOT RECOMMENDED for large datasets (>50 papers)
     Use /api/extract/batch instead for better reliability
     """
     logger.info(f"Extraction: {len(request.papers)} papers with {request.llm_provider}")
