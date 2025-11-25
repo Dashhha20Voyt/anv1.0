@@ -42,9 +42,8 @@ class GroqExtractor:
         'q9': 'Does it explain why caloric restriction increases lifespan?'
     }
     
-    # Расширенный словарь теорий старения (50+ теорий)
     THEORY_KEYWORDS = {
-        # === БИОЛОГИЧЕСКИЕ / МОЛЕКУЛЯРНЫЕ ТЕОРИИ (9 Hallmarks + расширения) ===
+       
         'Telomere Attrition': [
             'telomere', 'telomeric', 'telomerase', 'telomere shortening',
             'chromosome end', 'hayflick limit', 'telomere length'
@@ -89,7 +88,7 @@ class GroqExtractor:
             'paracrine signaling', 'exosome', 'extracellular vesicle'
         ],
         
-        # === ТЕОРИИ ОКИСЛИТЕЛЬНОГО СТРЕССА ===
+       
         'Free Radical Theory': [
             'free radical theory', 'free radical', 'harman',
             'radical damage', 'oxidative theory'
@@ -102,8 +101,7 @@ class GroqExtractor:
             'mitochondrial free radical', 'mitochondrial ros', 'mtros',
             'mitochondria-generated ros'
         ],
-        
-        # === ВОСПАЛЕНИЕ И ИММУНИТЕТ ===
+      
         'Inflammaging': [
             'inflammaging', 'chronic inflammation', 'low-grade inflammation',
             'inflammatory aging'
@@ -117,7 +115,7 @@ class GroqExtractor:
             'thymic involution', 't cell exhaustion'
         ],
         
-        # === ЭВОЛЮЦИОННЫЕ ТЕОРИИ ===
+        
         'Antagonistic Pleiotropy': [
             'antagonistic pleiotropy', 'pleiotropic', 'trade-off',
             'williams theory', 'beneficial early detrimental late'
@@ -153,7 +151,7 @@ class GroqExtractor:
             'epigenetic information', 'entropy', 'information entropy'
         ],
         
-        # === КЛИНИЧЕСКИЕ И БИОМАРКЕРЫ ===
+        
         'Aging Clocks and Biomarkers': [
             'aging clock', 'epigenetic clock', 'dnam clock',
             'horvath clock', 'hannum clock', 'phenotypic age',
@@ -168,7 +166,6 @@ class GroqExtractor:
             'delayed morbidity', 'shortened disability'
         ],
         
-        # === ЭНДОКРИННЫЕ И НЕЙРОЭНДОКРИННЫЕ ===
         'Endocrine Theory': [
             'endocrine theory', 'hormonal aging', 'hormone decline',
             'neuroendocrine', 'hpa axis', 'growth hormone', 'dhea'
@@ -178,7 +175,7 @@ class GroqExtractor:
             'reproductive senescence'
         ],
         
-        # === ПСИХОЛОГИЧЕСКИЕ ТЕОРИИ ===
+       
         'Cognitive Reserve Theory': [
             'cognitive reserve', 'brain reserve', 'neural reserve',
             'education buffer', 'resilience to neuropathology'
@@ -200,7 +197,7 @@ class GroqExtractor:
             'stress-mediated aging', 'cortisol', 'psychological stress'
         ],
         
-        # === СОЦИОЛОГИЧЕСКИЕ ТЕОРИИ ===
+     
         'Disengagement Theory': [
             'disengagement theory', 'social withdrawal',
             'reduced social interaction', 'cumming and henry'
@@ -230,7 +227,7 @@ class GroqExtractor:
             'industrialization', 'cowgill'
         ],
         
-        # === ЭКОНОМИЧЕСКИЕ И ДЕМОГРАФИЧЕСКИЕ ===
+        
         'Longevity Dividend': [
             'longevity dividend', 'economic benefit',
             'macro-economic impact', 'healthcare economics'
@@ -240,7 +237,6 @@ class GroqExtractor:
             'aging society', 'old-age dependency', 'silver tsunami'
         ],
         
-        # === СПЕЦИАЛИЗИРОВАННЫЕ БИОЛОГИЧЕСКИЕ ТЕОРИИ ===
         'Cross-Linking Theory': [
             'cross-linking', 'glycation', 'advanced glycation end products',
             'age', 'protein cross-linking', 'collagen cross-linking'
@@ -266,7 +262,7 @@ class GroqExtractor:
             'garbage catastrophe', 'lysosomal storage'
         ],
         
-        # === РЕЗЕРВНАЯ КАТЕГОРИЯ ===
+   
         'General Aging': [
             'aging', 'ageing', 'senescence', 'longevity', 'lifespan',
             'age-related', 'aging process'
@@ -494,7 +490,7 @@ Respond ONLY with valid JSON (no markdown, no code blocks):
             relevance = sum(1 for kw in aging_keywords if kw in text_for_validation) / len(aging_keywords)
             validity_score = round(relevance, 2)
             
-            # ✨ АВТОМАТИЧЕСКАЯ КЛАССИФИКАЦИЯ ТЕОРИИ
+            
             classified_theory = self.classify_theory(paper)
             
             result = {
